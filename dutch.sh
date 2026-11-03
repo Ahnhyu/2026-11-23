@@ -2,6 +2,11 @@
 # 엔빵 - 회식비 정산기
 # 사용법: bash dutch.sh <총액> <인원>
 
+if [ $# -lt 2 ]; then
+  echo "사용법: bash dutch.sh <총액> <인원>"
+  exit 1
+fi
+
 total=$1
 people=$2
 
