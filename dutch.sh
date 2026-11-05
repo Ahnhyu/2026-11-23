@@ -11,6 +11,11 @@ total=$1
 people=$2
 coupon=${3:-0}
 
+if [ "$coupon" -gt "$total" ]; then
+  echo "쿠폰이 총액보다 큽니다"
+  exit 1
+fi
+
 # 1인당 금액: 원 단위 올림 (걷은 돈이 모자라면 안 되니까!)
 per=$(( (total - coupon + people - 1) / people ))
 
