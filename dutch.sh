@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-# 엔빵 - 회식비 정산기
-# 사용법: bash dutch.sh <총액> <인원> [쿠폰]
+# 엔빵: 회식비를 인원수대로 나눠 주는 정산기
 
-if [ $# -lt 2 ]; then
+usage() {
   echo "사용법: bash dutch.sh <총액> <인원> [쿠폰]"
   exit 1
-fi
+}
+
+[ $# -lt 2 ] && usage
 
 total=$1
 people=$2
@@ -16,7 +17,7 @@ if [ "$coupon" -gt "$total" ]; then
   exit 1
 fi
 
-# 1인당 금액: 원 단위 올림 (걷은 돈이 모자라면 안 되니까!)
-per=$(( (total - coupon + people - 1) / people ))
+# 1인당 금액
+per=$(( (total - coupon) / people ))
 
 echo "1인당 ${per}원"
