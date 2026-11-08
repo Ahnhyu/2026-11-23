@@ -20,4 +20,5 @@ fi
 # 1인당 금액
 per=$(( (total - coupon) / people ))
 
+echo "총액 ${total}원 / ${people}명"
 echo "1인당 ${per}원"
