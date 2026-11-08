@@ -21,4 +21,7 @@ fi
 per=$(( (total - coupon) / people ))
 
 echo "총액 ${total}원 / ${people}명"
+if [ "$coupon" -gt 0 ]; then
+  echo "쿠폰 -${coupon}원"
+fi
 echo "1인당 ${per}원"
