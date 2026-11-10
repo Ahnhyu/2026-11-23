@@ -3,6 +3,7 @@
 
 usage() {
   echo "사용법: bash dutch.sh <총액> <인원> [쿠폰]"
+  echo "예시:   bash dutch.sh 30000 4 3000"
   exit 1
 }
 
